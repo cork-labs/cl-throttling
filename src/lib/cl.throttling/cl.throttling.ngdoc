@@ -1,0 +1,5 @@
+@ngdoc overview
+@name ng.cl.throttling
+@description
+
+Provides a service to debounce and throttle function calls.

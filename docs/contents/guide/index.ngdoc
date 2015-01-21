@@ -1,0 +1,62 @@
+@ngdoc overview
+@name Guide
+@description
+
+# ng.cl.throttling
+
+[![Build Status: Linux](http://img.shields.io/travis/cork-labs/ng-cl-throttling/master.svg?style=flat-square)](https://travis-ci.org/cork-labs/ng-cl-throttling)
+
+Provides a service to debounce and throttle function calls.
+
+## Getting started
+
+```
+// bower install (or clone)
+bower install --save ng-cl-throttiling
+
+// add the code to your (you're using grunt/gulp to do this for you, right?)
+<script type="text/javascript" src="/vendor/ng.cl.throttling.min.js" />
+
+// add the module dependency to modules where you use it
+angular.module('your.module', ['ng.cl.throttling'])
+
+// add the service dependency to the service, controller, directive where you need it
+.controller('myController', ['clThrottling'], function (clThrottling) {
+
+    // wrap your function to debounce or throttle
+    var debouncedFn = clThrottling.throttle(function (arg1, arg2) {
+        // perform that expensive arithmetics with args
+        console.log(arg1 + arg2);
+    });
+});
+
+```
+
+## Documentation
+
+The ng.cl.throttling provides a service with 4 methods to suit all your throttling and debouncing needs in under 1K.
+
+Please check the complete [documentation](http://jarvis.cork-labs.local.org/ng-cl-throttling/current/docs/#/api) and [examples](http://jarvis.cork-labs.local.org/ng-cl-throttling/current/docs/#/demos).
+
+### var throttledFn = clThrottling.throttle(fn)
+
+Execute the throttled function as necessary, but never under M miliseconds after the previous execution.
+
+### var debouncedFn = clThrottling.debounce(fn)
+
+Execute the debounced function only after M miliseconds of no calls.
+
+### var debouncedFn = clThrottling.debounceLeading(fn)
+
+Execute the debounced function immediately, ignore any other calls as long as within M miliseconds from the previuous call.
+
+If the actual "latest" value is relavant, don't use this function because as long as there are consecutive calls with 2
+secs, the value is not updated again.
+
+### var debouncedFn = clThrottling.debounceBoth(fn)
+
+Execute the debounced function immediately, ignore any other calls as long as within M miliseconds from the previous call
+but also execute the function with the arguments of the last call, if at least another call is made within the M miliseconds.
+
+Use this one instead of debounceLeading() if both the initial and latest value are important but you want to ignore all
+activity in between.

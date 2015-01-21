@@ -1,0 +1,46 @@
+@ngdoc overview
+@name Throttle
+@description
+
+## Throttle
+
+Execute the throttled function as necessary, but never under M miliseconds after the previous execution.
+
+<doc:example module="exampleApp" height="500">
+    <doc:source>
+        <script>
+            angular.module('exampleApp', ['ng.cl.throttling'])
+            .controller('exampleCtrl', ['$scope', 'clThrottling', function ($scope, clThrottling) {
+                var throttledHandler = clThrottling.throttle(function (val) {
+                    $scope.throttled = $scope.userInput;
+                }, 2000);
+                $scope.$watch('userInput', function (newVal) {
+                    if ('undefined' !== typeof newVal) {
+                        throttledHandler(newVal);
+                    }
+                });
+            }]);
+        </script>
+        <style>
+            form {
+                padding: 10px;
+            }
+            textarea.form-control {
+                height: 200px;
+            }
+        </style>
+        <div data-ng-controller="exampleCtrl">
+            <form name="exampleForm">
+                <div class="form-group">
+                    <label>Type here:</label>
+                    <input type="text" ng-model="userInput" class="form-control" />
+                </div>
+                <div class="throttled">
+                    <label>Throttled:</label>
+                    <textarea ng-model="throttled" class="form-control"></textarea>
+                    <p>update frequency is never lower than 2 seconds</p>
+                </div>
+            </form>
+        </div>
+    </doc:source>
+</doc:example>

@@ -1,0 +1,46 @@
+@ngdoc overview
+@name Debounce (Trailing)
+@description
+
+## Debounce (Trailing)
+
+Execute the debounced function only after M miliseconds of no calls.
+
+<doc:example module="exampleApp" height="500">
+    <doc:source>
+        <script>
+            angular.module('exampleApp', ['ng.cl.throttling'])
+            .controller('exampleCtrl', ['$scope', 'clThrottling', function ($scope, clThrottling) {
+                var debouncedHandler = clThrottling.debounce(function (val) {
+                    $scope.debounced = $scope.userInput;
+                }, 2000);
+                $scope.$watch('userInput', function (newVal) {
+                    if ('undefined' !== typeof newVal) {
+                        debouncedHandler(newVal);
+                    }
+                });
+            }]);
+        </script>
+        <style>
+            form {
+                padding: 10px;
+            }
+            textarea.form-control {
+                height: 200px;
+            }
+        </style>
+        <div data-ng-controller="exampleCtrl">
+            <form name="exampleForm">
+                <div class="form-group">
+                    <label>Type here:</label>
+                    <input type="text" ng-model="userInput" class="form-control" />
+                </div>
+                <div class="debounced">
+                    <label>Debounced:</label>
+                    <textarea ng-model="debounced" class="form-control"></textarea>
+                    <p>only updated if you stop typing for 2 seconds</p>
+                </div>
+            </form>
+        </div>
+    </doc:source>
+</doc:example>

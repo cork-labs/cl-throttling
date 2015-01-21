@@ -1,0 +1,50 @@
+@ngdoc overview
+@name Debounce Both
+@description
+
+## Debounce Both (Leading and Traling)
+
+Execute the debounced function immediately, ignore any other calls as long as within M miliseconds from the previous call
+but also execute the function with the arguments of the last call, if at least another call is made within the M miliseconds.
+
+Use this one instead of debounceLeading() if both the initial and latest value are important but you want to ignore all
+activity in between.
+
+<doc:example module="exampleApp" height="500">
+    <doc:source>
+        <script>
+            angular.module('exampleApp', ['ng.cl.throttling'])
+            .controller('exampleCtrl', ['$scope', 'clThrottling', function ($scope, clThrottling) {
+                var debouncedHandler = clThrottling.debounceBoth(function (val) {
+                    $scope.debounced = $scope.userInput;
+                }, 2000);
+                $scope.$watch('userInput', function (newVal) {
+                    if ('undefined' !== typeof newVal) {
+                        debouncedHandler(newVal);
+                    }
+                });
+            }]);
+        </script>
+        <style>
+            form {
+                padding: 10px;
+            }
+            textarea.form-control {
+                height: 200px;
+            }
+        </style>
+        <div data-ng-controller="exampleCtrl">
+            <form name="exampleForm">
+                <div class="form-group">
+                    <label>Type here:</label>
+                    <input type="text" ng-model="userInput" class="form-control" />
+                </div>
+                <div class="debounced">
+                    <label>Debounced:</label>
+                    <textarea ng-model="debounced" class="form-control"></textarea>
+                    <p>only updated if you stop typing for 2 seconds</p>
+                </div>
+            </form>
+        </div>
+    </doc:source>
+</doc:example>

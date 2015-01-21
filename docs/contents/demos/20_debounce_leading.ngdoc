@@ -1,0 +1,49 @@
+@ngdoc overview
+@name Debounce Leading
+@description
+
+## Debounce Leading
+
+Execute the debounced function immediately, ignore any other calls as long as within M miliseconds from the previuous call.
+
+If the actual "latest" value is relavant, don't use this function because as long as there are consecutive calls with 2
+secs, the value is not updated again.
+
+<doc:example module="exampleApp" height="500">
+    <doc:source>
+        <script>
+            angular.module('exampleApp', ['ng.cl.throttling'])
+            .controller('exampleCtrl', ['$scope', 'clThrottling', function ($scope, clThrottling) {
+                var debouncedHandler = clThrottling.debounceLeading(function (val) {
+                    $scope.debounced = $scope.userInput;
+                }, 2000);
+                $scope.$watch('userInput', function (newVal) {
+                    if ('undefined' !== typeof newVal) {
+                        debouncedHandler(newVal);
+                    }
+                });
+            }]);
+        </script>
+        <style>
+            form {
+                padding: 10px;
+            }
+            textarea.form-control {
+                height: 200px;
+            }
+        </style>
+        <div data-ng-controller="exampleCtrl">
+            <form name="exampleForm">
+                <div class="form-group">
+                    <label>Type here:</label>
+                    <input type="text" ng-model="userInput" class="form-control" />
+                </div>
+                <div class="debounced">
+                    <label>Debounced:</label>
+                    <textarea ng-model="debounced" class="form-control"></textarea>
+                    <p>only updated if you pause for 2 seconds and then type again</p>
+                </div>
+            </form>
+        </div>
+    </doc:source>
+</doc:example>
