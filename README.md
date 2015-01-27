@@ -1,5 +1,5 @@
-# ng.cl.throttling [![Build Status: Linux](http://img.shields.io/travis/cork-labs/ng-cl-throttling/master.svg?style=flat-square)](https://travis-ci.org/cork-labs/ng-cl-throttling) [![Bower version](http://img.shields.io/bower/v/ng-cl-throttling?style=flat-square)]
- (https://github.com/cork-labs/ng-cl-throttling)
+# ng.cl.throttling [![Build Status: Linux](http://img.shields.io/travis/cork-labs/ng.cl.throttling/master.svg?style=flat-square)](https://travis-ci.org/cork-labs/ng.cl.throttling) [![Bower version](http://img.shields.io/bower/v/ng.cl.throttling?style=flat-square)]
+ (https://github.com/cork-labs/ng.cl.throttling)
 
 > Provides a service to debounce and throttle function calls.
 
@@ -32,7 +32,7 @@ angular.module('your.module', ['ng.cl.throttling'])
 
 The ng.cl.throttling provides a service with 4 methods to suit all your throttling and debouncing needs in under 1K.
 
-Please check the complete [documentation](http://jarvis.cork-labs.org/ng-cl-throttling/current/docs/#/api) and [examples](http://jarvis.cork-labs.org/ng-cl-throttling/current/docs/#/demos).
+Please check the complete [documentation](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/api) and [examples](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/demos).
 
 ### var throttledFn = clThrottling.throttle(fn)
 
@@ -97,7 +97,7 @@ Throttling by [Remy Sharp](https://remysharp.com/2010/07/21/throttling-function-
 
 ## [MIT License](LICENSE-MIT)
 
-[Copyright (c) 2014 Cork Labs](http://cork-labs.mit-license.org/2015)
+[Copyright (c) 2015 Cork Labs](http://cork-labs.mit-license.org/2015)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

@@ -10,7 +10,9 @@ module.exports = function (grunt, data) {
             dist: {
 
                 __groups: ['dist_prepare'],
-                src: ['<%= paths.dist %>']
+                src: [
+                    '<%= paths.dist %>'
+                ]
             }
         },
 
@@ -32,30 +34,6 @@ module.exports = function (grunt, data) {
     var key;
     var target;
 
-    // html2js: generate template modules
-
-    for (key in data.vars.dist_templates || {}) {
-        config.html2js = config.html2js || {};
-        target = data.vars.dist_templates[key];
-        config.html2js['dist_templates_' + key] = {
-            __groups: ['dist_templates'],
-            src: target.src,
-            dest: target.dest,
-            options: {
-                module: target.name
-            }
-        };
-    }
-
-    // cssglue: css distribution tasks
-
-    for (key in data.vars.dist_css) {
-        target = _.clone(data.vars.dist_css[key]);
-        config.cssglue = config.cssglue || {};
-        target.__groups = 'dist_css';
-        config.cssglue['dist_css_' + key] = target;
-    }
-
     // jsglue: js distribution tasks
 
     for (key in data.vars.dist_js) {
@@ -63,6 +41,36 @@ module.exports = function (grunt, data) {
         config.jsglue = config.jsglue || {};
         target.__groups = 'dist_js';
         config.jsglue['dist_js_' + key] = target;
+    }
+
+    // cssglue: css distribution tasks
+
+    if (data.flags.css) {
+
+        for (key in data.vars.dist_css) {
+            target = _.clone(data.vars.dist_css[key]);
+            config.cssglue = config.cssglue || {};
+            target.__groups = 'dist_css';
+            config.cssglue['dist_css_' + key] = target;
+        }
+    }
+
+    // html2js: generate template modules
+
+    if (data.flags.tpl) {
+
+        for (key in data.vars.dist_templates || {}) {
+            config.html2js = config.html2js || {};
+            target = data.vars.dist_templates[key];
+            config.html2js['dist_templates_' + key] = {
+                __groups: ['dist_templates'],
+                src: target.src,
+                dest: target.dest,
+                options: {
+                    module: target.name
+                }
+            };
+        }
     }
 
     // karma:dist - generate the list of files

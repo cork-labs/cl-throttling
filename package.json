@@ -16,11 +16,11 @@
     "angularjs",
     "boilerplate"
   ],
-  "homepage": "http://github.com/cork-labs/ng-cl-throttling",
-  "bugs": "https://github.com/cork-labs/ng-cl-throttling/issues",
+  "homepage": "http://github.com/cork-labs/ng.cl.throttling",
+  "bugs": "https://github.com/cork-labs/ng.cl.throttling/issues",
   "repository": {
     "type": "git",
-    "url": "git://github.com/cork-labs/ng-cl-throttling.git"
+    "url": "git://github.com/cork-labs/ng.cl.throttling.git"
   },
   "readmeFilename": "README.md",
   "devDependencies": {
@@ -49,7 +49,6 @@
     "grunt-jsglue": "~0.1.0",
     "grunt-karma": "~0.9.0",
     "grunt-ngdocs": "git://github.com/cork-labs/grunt-ngdocs.git",
-    "grunt-ngindex": "~0.1.0",
     "grunt-shell": "~0.6.4",
     "grunt-template": "~0.2.3",
     "karma": "~0.12.0",

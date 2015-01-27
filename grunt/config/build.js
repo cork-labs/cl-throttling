@@ -11,14 +11,6 @@ module.exports = function (grunt, data) {
                 src: [
                     '<%= paths.build %>'
                 ]
-            },
-
-            docs: {
-
-                __groups: ['docs_prepare'],
-                src: [
-                    '<%= paths.build %>/<%= paths.docs_dest %>'
-                ]
             }
         },
 
@@ -36,18 +28,6 @@ module.exports = function (grunt, data) {
                 }]
             },
 
-            build_less_srcs: {
-
-                __groups: ['build_css'],
-                files: [{
-                    cwd: '.',
-                    src: [
-                        '<%= files.src_less %>'
-                    ],
-                    dest: '<%= paths.build %>/'
-                }]
-            },
-
             build_vendor_js: {
 
                 __groups: ['build_vendors'],
@@ -55,18 +35,6 @@ module.exports = function (grunt, data) {
                     cwd: '.',
                     src: [
                         '<%= files.vendor_js %>'
-                    ],
-                    dest: '<%= paths.build %>/'
-                }]
-            },
-
-            build_vendor_css: {
-
-                __groups: ['build_vendors'],
-                files: [{
-                    cwd: '.',
-                    src: [
-                        '<%= files.vendor_css %>'
                     ],
                     dest: '<%= paths.build %>/'
                 }]
@@ -87,13 +55,6 @@ module.exports = function (grunt, data) {
                     files: ['<%= files.karma_include %>'].concat('<%= vars.build_test.include %>')
                 }
             },
-        },
-
-        ngdocs: {
-
-            build: {
-                __groups: ['docs_build'],
-            }
         },
 
         serve: {
@@ -123,17 +84,6 @@ module.exports = function (grunt, data) {
                 ]
             },
 
-            src_tpl: {
-
-                files: [
-                    '<%= files.src_tpl %>',
-                ],
-                tasks: [
-                    'group-build_templates',
-                    'group-build_test'
-                ]
-            },
-
             src_spec: {
 
                 files: [
@@ -143,16 +93,6 @@ module.exports = function (grunt, data) {
                     'jsbeautifier:beautify_src_spec',
                     'jshint:src_spec',
                     'group-build_test'
-                ]
-            },
-
-            src_less: {
-
-                files: [
-                    '<%= files.src_less %>'
-                ],
-                tasks: [
-                    'group-build_css'
                 ]
             },
 
@@ -177,18 +117,6 @@ module.exports = function (grunt, data) {
                 tasks: [
                     'group-build_test'
                 ]
-            },
-
-            // -- docs
-
-            build_docs: {
-
-                files: [
-                    '<%= files.docs %>'
-                ],
-                tasks: [
-                    'group-docs_build'
-                ]
             }
         }
     };
@@ -198,77 +126,183 @@ module.exports = function (grunt, data) {
     var key;
     var target;
 
-    // html2js: generate template modules
+    // -- css: watch, build, copy sources
 
-    for (key in data.vars.build_templates || {}) {
-        config.html2js = config.html2js || {};
-        target = data.vars.build_templates[key];
-        config.html2js['build_templates_' + key] = {
-            __groups: ['build_templates'],
-            src: target.src,
-            dest: target.dest,
-            options: {
-                module: target.name
-            }
-        };
+    if (data.flags.css) {
+
+        if (data.files.src_less || data.files.src_sass) {
+
+            // watch: less/sass sources (> build css)
+
+            config.watch.src_less = {
+                files: [],
+                tasks: [
+                    'group-build_css'
+                ]
+            };
+        }
+
+        if (data.files.src_less) {
+
+            // watch: less sources (> build css)
+
+            config.watch.src_less.push('<%= files.src_less %>');
+
+            // copy: less/sass sources (used with sourcemaps)
+
+            config.copy.build_css = {
+                __groups: ['build_css'],
+                files: [{
+                    cwd: '.',
+                    src: [
+                        '<%= files.src_less %>'
+                    ],
+                    dest: '<%= paths.build %>/'
+                }]
+            };
+        }
+
+        if (data.files.src_sass) {
+
+            // watch: sass sources (> build css)
+
+            config.watch.src_less.push('<%= files.src_less %>');
+
+            // copy: sass sources used with sourcemaps (build css)
+
+            config.copy.build_css = {
+                __groups: ['build_css'],
+                files: [{
+                    cwd: '.',
+                    src: [
+                        '<%= files.src_sass %>'
+                    ],
+                    dest: '<%= paths.build %>/'
+                }]
+            };
+        }
+
+        // copy: css vendors
+
+        if (data.files.vendor_css) {
+
+            config.copy.build_vendor_css = {
+                __groups: ['build_vendors'],
+                files: [{
+                    cwd: '.',
+                    src: [
+                        '<%= files.vendor_css %>'
+                    ],
+                    dest: '<%= paths.build %>/'
+                }]
+            };
+        }
+
+        // less: compile less files
+
+        for (key in data.vars.build_less || {}) {
+            config.less = config.less || {};
+            target = data.vars.build_less[key];
+            config.less['build_css_' + key] = {
+                __groups: ['build_css'],
+                src: target.src,
+                dest: target.dest,
+                options: {
+                    sourceMap: true,
+                    dumpLineNumbers: 'all'
+                }
+            };
+        }
+
+        // sass: compile sass files
+
+        for (key in data.vars.build_sass || {}) {
+            config.sass = config.sass || {};
+            target = data.vars.build_sass[key];
+            config.sass['build_css_' + key] = {
+                __groups: ['build_css'],
+                src: target.src,
+                dest: target.dest,
+                options: {
+                    sourcemap: 'auto',
+                    dumpLineNumbers: 'all'
+                }
+            };
+        }
     }
 
-    // less: compile less files
+    // -- tpl: watch and build, add to tests
 
-    for (key in data.vars.build_less || {}) {
-        config.less = config.less || {};
-        target = data.vars.build_less[key];
-        config.less['build_css_' + key] = {
-            __groups: ['build_css'],
-            src: target.src,
-            dest: target.dest,
-            options: {
-                sourceMap: true,
-                dumpLineNumbers: 'all'
-            }
+    if (data.flags.tpl && data.files.src_tpl) {
+
+        // watch: tpls (build modules)
+
+        config.watch.src_tpl = {
+
+            files: [
+                '<%= files.src_tpl %>',
+            ],
+            tasks: [
+                'group-build_templates',
+                'group-build_test'
+            ]
         };
+
+        // html2js: generate template modules
+
+        for (key in data.vars.build_templates || {}) {
+            config.html2js = config.html2js || {};
+            target = data.vars.build_templates[key];
+            config.html2js['build_templates_' + key] = {
+                __groups: ['build_templates'],
+                src: target.src,
+                dest: target.dest,
+                options: {
+                    module: target.name
+                }
+            };
+        }
+
+        // karma:build - append the template modules to sources loaded during tests
+        // NOTE: needs grunt template pre-processed, because karma will not process it
+
+        var module;
+        for (key in data.vars.build_templates || {}) {
+            module = data.vars.build_templates[key];
+            config.karma.build.options.files.push(grunt.template.process(module.dest, {
+                data: data
+            }));
+        }
     }
 
-    // sass: compile sass files
+    // docs: clean, build and watch
 
-    for (key in data.vars.build_sass || {}) {
-        config.sass = config.sass || {};
-        target = data.vars.build_sass[key];
-        config.sass['build_css_' + key] = {
-            __groups: ['build_css'],
-            src: target.src,
-            dest: target.dest,
-            options: {
-                sourcemap: 'auto',
-                dumpLineNumbers: 'all'
+    if (data.flags.docs) {
+
+        config.clean.docs = {
+
+            __groups: ['docs_prepare'],
+            src: [
+                '<%= paths.build %>/<%= paths.docs_dest %>'
+            ]
+        };
+
+        config.ngdocs = {
+
+            build: {
+                __groups: ['docs_build'],
             }
         };
-    }
 
-    // ngindex: index files to generate
+        config.watch.build_docs = {
 
-    for (key in data.vars.build_indexes || {}) {
-        config.ngindex = config.ngindex || {};
-        target = data.vars.build_indexes[key];
-        config.ngindex['build_indexes_' + key] = {
-            __groups: ['build_indexes'],
-            src: target.src,
-            dest: target.dest,
-            options: {
-                template: target.template
-            }
+            files: [
+                '<%= files.docs %>'
+            ],
+            tasks: [
+                'group-docs_build'
+            ]
         };
-    }
-
-    // karma:build - append the template modules
-
-    // and appending all the template modules
-    var module;
-    for (key in data.vars.build_templates || {}) {
-        module = data.vars.build_templates[key];
-        config.karma.build.options.files.push(grunt.template.process(module.dest, {
-            data: data
-        }));
     }
 
     return config;

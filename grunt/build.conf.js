@@ -6,6 +6,14 @@ module.exports = function (grunt, data) {
 
     var config = {
 
+        // -- flags
+
+        flags: {
+            tpl: false,
+            css: false,
+            docs: true
+        },
+
         // -- paths
 
         paths: {
@@ -59,13 +67,6 @@ module.exports = function (grunt, data) {
                 '<%= paths.src %>/**/*.spec.js'
             ],
 
-            // sources for the less tasks
-            // - copied to the build dir (sourcemaps, can be loaded in the browser)
-            // watch: build_less
-            src_less: [
-                '<%= paths.src %>/**/*.less'
-            ],
-
             // -- vendors
 
             // lib dependencies
@@ -81,9 +82,6 @@ module.exports = function (grunt, data) {
             vendor_test_js: [
                 '<%= paths.vendor %>/angular-mocks/angular-mocks.js'
             ],
-
-            // lib dependencies
-            vendor_css: [],
 
             // -- tests
 
@@ -154,13 +152,14 @@ module.exports = function (grunt, data) {
                 examplesScripts: [
                     'vendor/angular/angular.js',
                     'src/lib/ng.cl.throttling/ng.cl.throttling.js',
+                    // 'src/lib/ng.cl.throttling/ng.cl.throttling.templates.js',
                 ],
                 examplesStyles: [
                     '//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css',
                 ],
 
                 // the version selector expects JSON with the existing version and their URLs
-                // [{"version":"0.0.3","url":"http://jarvis.cork-labs.org/ng-cl-throttling/0.0.3"},{"version":"0.0.2","url":"http://jarvis.cork-labs.org/ng-cl-throttling/0.0.2"}]
+                // [{"version":"0.0.3","url":"http://jarvis.cork-labs.org/nglib-boilerplate/0.0.3"},{"version":"0.0.2","url":"http://jarvis.cork-labs.org/nglib-boilerplate/0.0.2"}]
                 // comment out to disable the version selector
                 versionsEndpoint: '//jarvis.cork-labs.local.org/api/project/<%= pkg.name %>/versions',
 
@@ -196,14 +195,6 @@ module.exports = function (grunt, data) {
 
             // -- build related
 
-            // less entry points
-            build_less: {
-                main: {
-                    src: '<%= paths.src %>/main.less',
-                    dest: '<%= paths.build %>/src/main.css'
-                }
-            },
-
             // extra options for tests executed during build
             build_test: {
                 browsers: [
@@ -217,27 +208,17 @@ module.exports = function (grunt, data) {
                 // files to load in the browser, during karma:build tests
                 include: [
                     '<%= files.src_js %>'
+                    // the template modules (html2js.*.destinations) are appended in grunt/config/build.js
                 ],
             },
 
             // -- dist related
 
-            // css distribution files
-            dist_css: {
-                main: {
-                    src: [
-                        '<%= paths.src %>/less/<%= vars.ngNamespace %>.less',
-                        '<%= paths.src %>/sass/<%= vars.ngNamespace %>.sass',
-                        '<%= paths.src %>/css/**/*.css'
-                    ],
-                    dest: '<%= paths.dist %>/<%= pkg.name %>'
-                }
-            },
-
             // javascript distribution files
             dist_js: {
                 main: {
                     src: [
+                        // '<%= vars.dist_templates.main.dest %>',
                         '<%= files.src_js %>'
                     ],
                     dest: '<%= paths.dist %>/<%= pkg.name %>'

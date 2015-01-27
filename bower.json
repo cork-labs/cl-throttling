@@ -6,7 +6,7 @@
     "Cork Labs <info@cork-labs.org> (http://cork-labs.org)"
   ],
   "license": "MIT",
-  "homepage": "http://github.com/cork-labs/ng-cl-throttling",
+  "homepage": "http://github.com/cork-labs/ng.cl.throttling",
   "ignore": [
     "bin",
     "docs",
@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/cork-labs/ng-cl-throttling.git"
+    "url": "git://github.com/cork-labs/ng.cl.throttling.git"
   },
   "dependencies": {
     "angular": "1.3.8"
