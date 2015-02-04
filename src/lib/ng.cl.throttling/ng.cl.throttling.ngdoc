@@ -2,4 +2,4 @@
 @name ng.cl.throttling
 @description
 
-Provides a service to debounce and throttle function calls.
+AngularJS service providing helpers to debounce and throttle function calls.

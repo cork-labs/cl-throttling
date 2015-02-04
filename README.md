@@ -1,8 +1,8 @@
-# ng.cl.throttling 
-[![Build Status: Linux](http://img.shields.io/travis/cork-labs/ng.cl.throttling/master.svg?style=flat-square)](https://travis-ci.org/cork-labs/ng.cl.throttling) 
-[![Bower version](http://img.shields.io/bower/v/ng.cl.throttling.png?style=flat-square)](https://github.com/cork-labs/ng.cl.throttling)
+# ng.cl.throttling
+[![Build Status: Linux](http://img.shields.io/travis/cork-labs/ng.cl.throttling/master.svg?style=flat-square)](https://travis-ci.org/cork-labs/ng.cl.throttling)
+[![Bower version](http://img.shields.io/bower/v/ng.cl.throttling.svg?style=flat-square)](https://github.com/cork-labs/ng.cl.throttling)
 
-> Provides a service to debounce and throttle function calls.
+> AngularJS service providing helpers to debounce and throttle function calls.
 
 ## Getting started
 

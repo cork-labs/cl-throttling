@@ -6,7 +6,7 @@
 
 [![Build Status: Linux](http://img.shields.io/travis/cork-labs/ng.cl.throttling/master.svg?style=flat-square)](https://travis-ci.org/cork-labs/ng.cl.throttling)
 
-Provides a service to debounce and throttle function calls.
+AngularJS service providing helpers to debounce and throttle function calls.
 
 ## Getting started
 
