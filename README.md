@@ -4,6 +4,7 @@
 
 > AngularJS service providing helpers to debounce and throttle function calls.
 
+
 ## Getting started
 
 ```
@@ -58,25 +59,43 @@ but also execute the function with the arguments of the last call, if at least a
 Use this one instead of debounceLeading() if both the initial and latest value are important but you want to ignore all
 activity in between.
 
+
 ## Changelog
+
 
 ## Todo
 
+
 ## Contributing
 
-Setup your development environment.
+We'd love for you to contribute to our source code and to make it even better than it is today!
+
+Make sure you read the [Contributing Guide](CONTRIBUTING.md) first.
+
+
+## Developing
+
+Clone this repository, install the dependencies and simply run `grunt develop`.
 
 ```
-$ sudo npm install -g grunt-cli bower
+$ npm install -g grunt-cli bower
 $ npm install
 $ bower install
 $ ./bootstrap.sh
 $ grunt develop
 ```
-Feel free to contribute with comments, issues and pull requests. Please follow the code style and make sure code is
-commented, linted, beautified and tested before issuing a pull request.
 
-If you have any doubts or rants also feel free to reach over to the authors.
+At this point, the source examples included were built into the `build/` directory and a simple webserver is launched so
+that you can browse the documentation, the examples and the code coverage.
+
+```
+...
+Running "serve:build" (serve) task
+Started connect web server on http://0.0.0.0:8000
+
+Running "watch" task
+Waiting...
+```
 
 More info on the (Grunt based) tools can be found in the
 [boilerplate documentation](http://jarvis.cork-labs.org/nglib-boilerplate/current/docs).
