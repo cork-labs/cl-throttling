@@ -14,7 +14,8 @@
   ],
   "keywords": [
     "angularjs",
-    "boilerplate"
+    "debounce",
+    "throttle"
   ],
   "homepage": "http://github.com/cork-labs/ng.cl.throttling",
   "bugs": "https://github.com/cork-labs/ng.cl.throttling/issues",
@@ -23,6 +24,8 @@
     "url": "git://github.com/cork-labs/ng.cl.throttling.git"
   },
   "readmeFilename": "README.md",
+  "dependencies": {
+  },
   "devDependencies": {
     "bower": "~1.3.3",
     "colors": "~1.0.3",
