@@ -1,0 +1,28 @@
+{
+  "generator-nglib": {
+    "use.git": true,
+    "has.sass": false,
+    "github.username": "cork-labs",
+    "license.name": "MIT",
+    "license.url": "http://cork-labs.mit-license.org/2015",
+    "author.name": "Cork Labs",
+    "author.email": "contact@cork-labs.org",
+    "author.url": "http://cork-labs.org",
+    "use.travis": true,
+    "project.name": "ng.cl.throttling",
+    "project.description": "AngularJS service providing helpers to debounce and throttle function calls.",
+    "bower.id": "ng.cl.throttling",
+    "npm.id": "ng.cl.throttling",
+    "angular.module": "ng.cl.throttling",
+    "has.tpl": false,
+    "has.css": false,
+    "has.less": false,
+    "has.docs": true,
+    "github.reponame": "ng.cl.throttling",
+    "homepage.url": "https://github.com/cork-labs/ng.cl.throttling",
+    "docs.url": "https://github.com/cork-labs/ng.cl.throttling",
+    "bugs.url": "https://github.com/cork-labs/ng.cl.throttling/issues",
+    "travis.id": "cork-labs/ng.cl.throttling",
+    "repo.url": "git@github.com:cork-labs/ng.cl.throttling.git"
+  }
+}
