@@ -58,8 +58,12 @@ a {
     color: #862a5e;
 }
 
-a:hover, a:focus {
+a:hover, a:focus, .content a code, .content a:focus code {
     color: #a4457b;
+}
+
+.content a code, .content a:focus code {
+    border: 1px transparent;
 }
 
 .nav-list > .active > a, .nav-list > .active > a:hover, .nav-list > .active > a:focus {
