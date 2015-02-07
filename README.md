@@ -29,9 +29,9 @@ Checkout the [full documentation](http://jarvis.cork-labs.org/ng.cl.throttling/c
 
 ## Documentation
 
-Make sure to check the [official documentation]((http://jarvis.cork-labs.org/ng.cl.throttling/current/docs) where you can find a
-[guide]((http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/guide), a few [demos]((http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/demos) and the complete
-[API reference]((http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/docs).
+Make sure to check the [official documentation](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs) where you can find a
+[guide](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/guide), a few [demos](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/demos) and the complete
+[API reference](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/docs).
 
 
 ### Quick Guide
