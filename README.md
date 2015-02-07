@@ -5,36 +5,38 @@
 > AngularJS service providing helpers to debounce and throttle function calls.
 
 
-## Getting started
+## Getting Started
+
+Add **ng.cl.throttling** to you project.
+
+Via bower:
 
 ```
-// bower install (or clone)
-bower install --save ng-cl-throttiling
-
-// add the code to your (you're using grunt/gulp to do this for you, right?)
-<script type="text/javascript" src="/vendor/ng.cl.throttling.min.js" />
-
-// add the module dependency to modules where you use it
-angular.module('your.module', ['ng.cl.throttling'])
-
-// add the service dependency to the service, controller, directive where you need it
-.controller('myController', ['clThrottling'], function (clThrottling) {
-
-    // wrap your function to debounce or throttle
-    var debouncedFn = clThrottling.throttle(function (arg1, arg2) {
-        // perform that expensive arithmetics with args
-        console.log(arg1 + arg2);
-    });
-});
-
+$ bower install --save ng.cl.throttling
 ```
 
+Via npm:
 
-## Usage
+```
+$ npm install --save ng.cl.throttling
+```
+
+Include the following JS files in your build:
+- `dist/ng.cl.throttling.js` OR `dist/ng.cl.throttling.min.js`
+
+Checkout the [full documentation](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs).
+
+
+## Documentation
+
+Make sure to check the [official documentation]((http://jarvis.cork-labs.org/ng.cl.throttling/current/docs) where you can find a
+[guide]((http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/guide), a few [demos]((http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/demos) and the complete
+[API reference]((http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/docs).
+
+
+### Quick Guide
 
 The ng.cl.throttling provides a service with 4 methods to suit all your throttling and debouncing needs in under 1K.
-
-Please check the complete [documentation](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/api) and [examples](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/demos).
 
 ### var throttledFn = clThrottling.throttle(fn)
 
@@ -58,12 +60,6 @@ but also execute the function with the arguments of the last call, if at least a
 
 Use this one instead of debounceLeading() if both the initial and latest value are important but you want to ignore all
 activity in between.
-
-
-## Changelog
-
-
-## Todo
 
 
 ## Contributing
@@ -98,7 +94,7 @@ Waiting...
 ```
 
 More info on the (Grunt based) tools can be found in the
-[boilerplate documentation](http://jarvis.cork-labs.org/nglib-boilerplate/current/docs).
+[boilerplate documentation](http://jarvis.cork-labs.org/boilerplate-nglib/current/docs).
 
 
 ## Authors

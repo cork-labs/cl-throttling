@@ -5,38 +5,35 @@
 # ng.cl.throttling
 
 [![Build Status: Linux](http://img.shields.io/travis/cork-labs/ng.cl.throttling/master.svg?style=flat-square)](https://travis-ci.org/cork-labs/ng.cl.throttling)
+[![Bower version](http://img.shields.io/bower/v/ng.cl.throttling.svg?style=flat-square)](https://github.com/cork-labs/ng.cl.throttling)
 
-AngularJS service providing helpers to debounce and throttle function calls.
+> AngularJS service providing helpers to debounce and throttle function calls.
 
-## Getting started
 
-```
-// bower install (or clone)
-bower install --save ng-cl-throttiling
+## Getting Started
 
-// add the code to your (you're using grunt/gulp to do this for you, right?)
-<script type="text/javascript" src="/vendor/ng.cl.throttling.min.js" />
+Add **ng.cl.throttling** to you project.
 
-// add the module dependency to modules where you use it
-angular.module('your.module', ['ng.cl.throttling'])
-
-// add the service dependency to the service, controller, directive where you need it
-.controller('myController', ['clThrottling'], function (clThrottling) {
-
-    // wrap your function to debounce or throttle
-    var debouncedFn = clThrottling.throttle(function (arg1, arg2) {
-        // perform that expensive arithmetics with args
-        console.log(arg1 + arg2);
-    });
-});
+Via bower:
 
 ```
+$ bower install --save ng.cl.throttling
+```
 
-## Documentation
+Via npm:
 
-The ng.cl.throttling provides a service with 4 methods to suit all your throttling and debouncing needs in under 1K.
+```
+$ npm install --save ng.cl.throttling
+```
 
-Please check the complete [documentation](http://jarvis.cork-labs.local.org/ng.cl.throttling/current/docs/#/api) and [examples](http://jarvis.cork-labs.local.org/ng.cl.throttling/current/docs/#/demos).
+Include the following JS files in your build:
+- `dist/ng.cl.throttling.js` OR `dist/ng.cl.throttling.min.js`
+
+
+## Quick Guide
+
+The `ng.cl.throttling` moduel provides a service with 4 methods to suit all your throttling and debouncing needs in
+under 1K.
 
 ### var throttledFn = clThrottling.throttle(fn)
 
@@ -94,7 +91,7 @@ Waiting...
 ```
 
 More info on the (Grunt based) tools can be found in the
-[boilerplate documentation](http://jarvis.cork-labs.org/nglib-boilerplate/current/docs).
+[boilerplate documentation](http://jarvis.cork-labs.org/boilerplate-nglib/current/docs).
 
 
 ## Authors
