@@ -1,5 +1,5 @@
 /**
- * ng.cl.throttling - v0.0.2 - 2015-01-27
+ * ng.cl.throttling - v0.0.3 - 2015-02-07
  * http://github.com/cork-labs/ng.cl.throttling
  *
  * Copyright (c) 2015 Cork Labs <http://cork-labs.org/>
@@ -15,12 +15,12 @@
      * @name   ng.cl.throttling.clThrottling
      *
      * @description
-     * Provides a method to throttling function calls.
+     * Provides methods to throttle and debounce function calls.
      */
     module.service('clThrottling', [
         '$timeout',
         '$q',
-        function ($timeout, $q) {
+        function clThrottling($timeout, $q) {
             var self = this;
 
             /**
