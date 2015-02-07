@@ -9,7 +9,7 @@ Execute the debounced function immediately, ignore any other calls as long as wi
 If the actual "latest" value is relavant, don't use this function because as long as there are consecutive calls with 2
 secs, the value is not updated again.
 
-<doc:example module="exampleApp" height="500">
+<doc:example module="exampleApp" height="380">
     <doc:source>
         <script>
             angular.module('exampleApp', ['ng.cl.throttling'])

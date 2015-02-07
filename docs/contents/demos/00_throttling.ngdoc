@@ -6,7 +6,7 @@
 
 Execute the throttled function as necessary, but never under M miliseconds after the previous execution.
 
-<doc:example module="exampleApp" height="500">
+<doc:example module="exampleApp" height="380">
     <doc:source>
         <script>
             angular.module('exampleApp', ['ng.cl.throttling'])

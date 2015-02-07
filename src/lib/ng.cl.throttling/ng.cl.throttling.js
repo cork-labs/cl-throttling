@@ -8,12 +8,12 @@
      * @name   ng.cl.throttling.clThrottling
      *
      * @description
-     * Provides a method to throttling function calls.
+     * Provides methods to throttle and debounce function calls.
      */
     module.service('clThrottling', [
         '$timeout',
         '$q',
-        function ($timeout, $q) {
+        function clThrottling($timeout, $q) {
             var self = this;
 
             /**

@@ -10,7 +10,7 @@ but also execute the function with the arguments of the last call, if at least a
 Use this one instead of debounceLeading() if both the initial and latest value are important but you want to ignore all
 activity in between.
 
-<doc:example module="exampleApp" height="500">
+<doc:example module="exampleApp" height="380">
     <doc:source>
         <script>
             angular.module('exampleApp', ['ng.cl.throttling'])

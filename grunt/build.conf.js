@@ -150,7 +150,7 @@ module.exports = function (grunt, data) {
 
                 // scripts stylesheets and examples
                 examplesScripts: [
-                    'vendor/angular/angular.js',
+                    '<%= paths.vendor %>/angular/angular.js',
                     'src/lib/ng.cl.throttling/ng.cl.throttling.js',
                     // 'src/lib/ng.cl.throttling/ng.cl.throttling.templates.js',
                 ],
@@ -181,7 +181,7 @@ module.exports = function (grunt, data) {
                         priority: 2
                     },
                     api: {
-                        src: ['src/**/*.js', '!src/**/*.spec.js', 'src/**/*.ngdoc'],
+                        src: ['src/**/*.js', '!src/**/*.spec.js', 'src/**/*.ngdoc', 'docs/contents/api/*.ngdoc'],
                         title: 'API',
                         icon: 'puzzle-piece',
                         priority: 3

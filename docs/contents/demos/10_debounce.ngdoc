@@ -6,7 +6,7 @@
 
 Execute the debounced function only after M miliseconds of no calls.
 
-<doc:example module="exampleApp" height="500">
+<doc:example module="exampleApp" height="380">
     <doc:source>
         <script>
             angular.module('exampleApp', ['ng.cl.throttling'])
