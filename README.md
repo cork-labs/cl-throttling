@@ -101,7 +101,7 @@ More info on the (Grunt based) tools can be found in the
 
 **Andre Torgal (andrezero)**
 + <https://twitter.com/andrezero>
-+ <http://github.com/andrezero>
++ <https://github.com/andrezero>
 
 
 ## Acknowledgements
