@@ -5,7 +5,7 @@
 # - npm
 # - bower
 # - grunt (checks for grunt-cli)
-min_node='0.10.30'
+min_node='0.10.26'
 min_npm='1.3.24'
 min_bower='1.3.3'
 min_grunt_cli='0.1.13'
@@ -90,10 +90,10 @@ command_exists npm npm $min_npm
 command_exists bower bower $min_bower
 command_exists grunt grunt-cli $min_grunt_cli
 
-node=$(node --version 2>&1 | sed 's/v\(.*\)/\1/');
+node=$(node --version 2>&1 | sed -E 's/v(.*)/\1/');
 npm=$(npm --version);
 bower=$(bower --version);
-grunt_cli=$(grunt --version 2>&1 | tr '\n' ' ' | sed 's/^grunt-cli v\([0-9.]*\)\( grunt .*\)\?/\1/');
+grunt_cli=$(grunt --version 2>&1 | tr '\n' ' ' | sed -E 's/^grunt-cli v([0-9.]*)( grunt .*)?/\1/');
 
 version_require node $node $min_node
 version_require npm $npm $min_npm
