@@ -15,12 +15,6 @@ Via bower:
 $ bower install --save ng.cl.throttling
 ```
 
-Via npm:
-
-```
-$ npm install --save ng.cl.throttling
-```
-
 Include the following JS files in your build:
 - `dist/ng.cl.throttling.js` OR `dist/ng.cl.throttling.min.js`
 
