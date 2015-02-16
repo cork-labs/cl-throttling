@@ -57,7 +57,7 @@ module.exports = function (grunt, data) {
             },
         },
 
-        serve: {
+        connect: {
 
             build: {
 

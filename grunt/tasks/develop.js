@@ -4,7 +4,9 @@ module.exports = function (grunt) {
     grunt.groups.registerTask('develop', [
         'build',
         'docs',
-        'serve:build',
+        'openport',
+        'connect:build',
+        'browserSync',
         'watch'
     ]);
 
