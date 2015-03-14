@@ -4,4 +4,3 @@ module.exports = function (grunt) {
     grunt.task.registerTask('server', ['openport', 'connect:build:keepalive']);
 
 };
-

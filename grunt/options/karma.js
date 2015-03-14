@@ -38,7 +38,7 @@ module.exports = function (grunt, data) {
                 ],
 
                 coverageReporter: {
-                    dir: '<%= paths.build %>/coverage'
+                    dir: '<%= paths.build %>/<%= paths.coverage %>'
                 },
 
                 // URL path for the browser to use
@@ -69,4 +69,3 @@ module.exports = function (grunt, data) {
 
     return config;
 };
-
