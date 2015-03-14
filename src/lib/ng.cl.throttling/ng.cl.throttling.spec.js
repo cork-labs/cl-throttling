@@ -16,4 +16,3 @@ describe('ng.cl.throttling', function () {
         });
     });
 });
-
