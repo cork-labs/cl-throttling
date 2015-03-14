@@ -1,6 +1,6 @@
 {
   "name": "ng.cl.throttling",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "AngularJS service providing helpers to debounce and throttle function calls.",
   "author": {
     "name": "Cork Labs",
