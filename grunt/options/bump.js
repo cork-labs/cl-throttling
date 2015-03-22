@@ -12,6 +12,7 @@ module.exports = {
             commit: true,
             commitMessage: 'chore(release): v%VERSION%',
             commitFiles: [
+                'dist/',
                 'package.json',
                 'bower.json',
                 'CHANGELOG.md'

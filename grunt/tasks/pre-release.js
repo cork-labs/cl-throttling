@@ -3,8 +3,8 @@ module.exports = function (grunt) {
 
     grunt.groups.registerTask('pre-release', [
         'git-is-clean',
-        'dist',
         'bump-only:prerelease',
+        'dist',
         'changelog',
         'bump-commit'
     ]);
