@@ -1,6 +1,6 @@
 /**
- * ng.cl.throttling - v0.0.5 - 2015-02-10
- * http://github.com/cork-labs/ng.cl.throttling
+ * ng.cork.throttling - v0.0.5 - 2015-02-10
+ * http://github.com/cork-labs/ng.cork.throttling
  *
  * Copyright (c) 2015 Cork Labs <http://cork-labs.org/>
  * License: MIT <http://cork-labs.mit-license.org/>
@@ -8,19 +8,19 @@
 (function (angular) {
     'use strict';
 
-    var module = angular.module('ng.cl.throttling', []);
+    var module = angular.module('ng.cork.throttling', []);
 
     /**
      * @ngdoc  service
-     * @name   ng.cl.throttling.clThrottling
+     * @name   ng.cork.throttling.corkThrottling
      *
      * @description
      * Provides methods to throttle and debounce function calls.
      */
-    module.service('clThrottling', [
+    module.service('corkThrottling', [
         '$timeout',
         '$q',
-        function clThrottling($timeout, $q) {
+        function corkThrottling($timeout, $q) {
             var self = this;
 
             /**
@@ -101,7 +101,7 @@
             /**
              * @ngdoc method
              * @name debounce
-             * @methodOf ng.cl.throttling.clThrottling
+             * @methodOf ng.cork.throttling.corkThrottling
              *
              * @description
              * Returns a wrapper function that, as long it is repeatedly invoked does not trigger
@@ -127,7 +127,7 @@
             /**
              * @ngdoc method
              * @name debounce
-             * @methodOf ng.cl.throttling.clThrottling
+             * @methodOf ng.cork.throttling.corkThrottling
              *
              * @description
              * Returns a function that triggers the provided function immediately and then ignores all calls for
@@ -152,7 +152,7 @@
             /**
              * @ngdoc method
              * @name debounce
-             * @methodOf ng.cl.throttling.clThrottling
+             * @methodOf ng.cork.throttling.corkThrottling
              *
              * @description
              * Returns a function that invokes the provided function immediately and, as long as there is at least a
@@ -180,7 +180,7 @@
             /**
              * @ngdoc method
              * @name throttle
-             * @methodOf ng.cl.throttling.clThrottling
+             * @methodOf ng.cork.throttling.corkThrottling
              *
              * @description
              * Returns a function that will never be triggered twice during "waitMs" miliseconds.

@@ -2,13 +2,13 @@
 @name API Reference
 @description
 
-# ng.cl.throttling - API Reference
+# ng.cork.throttling - API Reference
 
-> Welcome to the **ng.cl.throttling** API reference.
+> Welcome to the **ng.cork.throttling** API reference.
 
-If you want to know how **ng.cl.throttling** works, checkout the {@link guide/ guide} and the {@link demos/ demos}.
+If you want to know how **ng.cork.throttling** works, checkout the {@link guide/ guide} and the {@link demos/ demos}.
 
 
 ## Modules
 
-- **[ng.cl.throttling](#/api/ng.cl.throttling)** - AngularJS service, provides helpers to debounce and throttle function calls.
+- **[ng.cork.throttling](#/api/ng.cork.throttling)** - AngularJS service, provides helpers to debounce and throttle function calls.

@@ -12,9 +12,9 @@ secs, the value is not updated again.
 <doc:example module="exampleApp" height="380">
     <doc:source>
         <script>
-            angular.module('exampleApp', ['ng.cl.throttling'])
-            .controller('exampleCtrl', ['$scope', 'clThrottling', function ($scope, clThrottling) {
-                var debouncedHandler = clThrottling.debounceLeading(function (val) {
+            angular.module('exampleApp', ['ng.cork.throttling'])
+            .controller('exampleCtrl', ['$scope', 'corkThrottling', function ($scope, corkThrottling) {
+                var debouncedHandler = corkThrottling.debounceLeading(function (val) {
                     $scope.debounced = $scope.userInput;
                 }, 2000);
                 $scope.$watch('userInput', function (newVal) {

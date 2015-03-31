@@ -1,53 +1,53 @@
-# ng.cl.throttling
-[![Build Status: Linux](http://img.shields.io/travis/cork-labs/ng.cl.throttling/master.svg?style=flat-square)](https://travis-ci.org/cork-labs/ng.cl.throttling)
-[![Bower version](http://img.shields.io/bower/v/ng.cl.throttling.svg?style=flat-square)](https://github.com/cork-labs/ng.cl.throttling)
+# ng.cork.throttling
+[![Build Status: Linux](http://img.shields.io/travis/cork-labs/ng.cork.throttling/master.svg?style=flat-square)](https://travis-ci.org/cork-labs/ng.cork.throttling)
+[![Bower version](http://img.shields.io/bower/v/ng.cork.throttling.svg?style=flat-square)](https://github.com/cork-labs/ng.cork.throttling)
 
 > AngularJS service providing helpers to debounce and throttle function calls.
 
 
 ## Getting Started
 
-Add **ng.cl.throttling** to you project.
+Add **ng.cork.throttling** to you project.
 
 Via bower:
 
 ```
-$ bower install --save ng.cl.throttling
+$ bower install --save ng.cork.throttling
 ```
 
 Include the following JS files in your build:
-- `dist/ng.cl.throttling.js` OR `dist/ng.cl.throttling.min.js`
+- `dist/ng.cork.throttling.js` OR `dist/ng.cork.throttling.min.js`
 
-Checkout the [full documentation](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs).
+Checkout the [full documentation](http://jarvis.cork-labs.org/ng.cork.throttling/current/docs).
 
 
 ## Documentation
 
-Make sure to check the [official documentation](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs) where you can find a
-[guide](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/guide), a few [demos](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/demos) and the complete
-[API reference](http://jarvis.cork-labs.org/ng.cl.throttling/current/docs/#/docs).
+Make sure to check the [official documentation](http://jarvis.cork-labs.org/ng.cork.throttling/current/docs) where you can find a
+[guide](http://jarvis.cork-labs.org/ng.cork.throttling/current/docs/#/guide), a few [demos](http://jarvis.cork-labs.org/ng.cork.throttling/current/docs/#/demos) and the complete
+[API reference](http://jarvis.cork-labs.org/ng.cork.throttling/current/docs/#/docs).
 
 
 ### Quick Guide
 
-The ng.cl.throttling provides a service with 4 methods to suit all your throttling and debouncing needs in under 1K.
+The ng.cork.throttling provides a service with 4 methods to suit all your throttling and debouncing needs in under 1K.
 
-### var throttledFn = clThrottling.throttle(fn)
+### var throttledFn = corkThrottling.throttle(fn)
 
 Execute the throttled function as necessary, but never under M miliseconds after the previous execution.
 
-### var debouncedFn = clThrottling.debounce(fn)
+### var debouncedFn = corkThrottling.debounce(fn)
 
 Execute the debounced function only after M miliseconds of no calls.
 
-### var debouncedFn = clThrottling.debounceLeading(fn)
+### var debouncedFn = corkThrottling.debounceLeading(fn)
 
 Execute the debounced function immediately, ignore any other calls as long as within M miliseconds from the previuous call.
 
 If the actual "latest" value is relavant, don't use this function because as long as there are consecutive calls with 2
 secs, the value is not updated again.
 
-### var debouncedFn = clThrottling.debounceBoth(fn)
+### var debouncedFn = corkThrottling.debounceBoth(fn)
 
 Execute the debounced function immediately, ignore any other calls as long as within M miliseconds from the previous call
 but also execute the function with the arguments of the last call, if at least another call is made within the M miliseconds.

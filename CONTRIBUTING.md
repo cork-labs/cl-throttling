@@ -12,10 +12,10 @@ Here are the guidelines we'd like you to follow:
 
 ## <a name="issues"></a> Issues
 
-If you have questions about how to use this component, please open a [GitHub Issue](https://github.com/cork-labs/ng.cl.throttling/issues).
+If you have questions about how to use this component, please open a [GitHub Issue](https://github.com/cork-labs/ng.cork.throttling/issues).
 
 If you find a bug in the source code or a mistake in the documentation, you can help us by
-submitting an issue to our [GitHub Issue](https://github.com/cork-labs/ng.cl.throttling/issues). Even better you can submit a Pull Request
+submitting an issue to our [GitHub Issue](https://github.com/cork-labs/ng.cork.throttling/issues). Even better you can submit a Pull Request
 with a fix.
 
 Before you submit your issue search the archive, maybe your question was already answered.
@@ -39,7 +39,7 @@ chances of your issue being dealt with quickly:
 
 Before you submit your pull request consider the following guidelines:
 
-* Search [Pull Requests](https://github.com/cork-labs/ng.cl.throttling/pulls) for an open or closed Pull Request
+* Search [Pull Requests](https://github.com/cork-labs/ng.cork.throttling/pulls) for an open or closed Pull Request
   that relates to your submission. You don't want to duplicate effort.
 * Make your changes in a new git branch:
 
@@ -72,7 +72,7 @@ Before you submit your pull request consider the following guidelines:
     git push origin fix-branch
     ```
 
-* In GitHub, send a pull request to `ng.cl.throttling:master`.
+* In GitHub, send a pull request to `ng.cork.throttling:master`.
 * If we suggest changes then:
   * Make the required updates.
   * Re-run the test suite to ensure tests are still passing.

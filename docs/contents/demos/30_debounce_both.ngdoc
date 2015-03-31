@@ -13,9 +13,9 @@ activity in between.
 <doc:example module="exampleApp" height="380">
     <doc:source>
         <script>
-            angular.module('exampleApp', ['ng.cl.throttling'])
-            .controller('exampleCtrl', ['$scope', 'clThrottling', function ($scope, clThrottling) {
-                var debouncedHandler = clThrottling.debounceBoth(function (val) {
+            angular.module('exampleApp', ['ng.cork.throttling'])
+            .controller('exampleCtrl', ['$scope', 'corkThrottling', function ($scope, corkThrottling) {
+                var debouncedHandler = corkThrottling.debounceBoth(function (val) {
                     $scope.debounced = $scope.userInput;
                 }, 2000);
                 $scope.$watch('userInput', function (newVal) {

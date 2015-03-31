@@ -1,0 +1,34 @@
+@ngdoc overview
+@name ng.cork.throttling
+@description
+
+> AngularJS service providing helpers to debounce and throttle function calls.
+
+# Dependencies
+
+- None
+
+
+# Usage
+
+Add this module as a dependency of your modules.
+
+<pre>
+angular.module('app', ['ng.cork.throttling']);
+</pre>
+
+
+
+
+## [corkThrottling](#/api/ng.cork.throttling.corkThrottling) Service
+
+Use the {@link ng.cork.throttling.corkThrottling corkThrottling} service by injecting it into your controllers or services.
+
+<pre>
+angular.module('someModule', ['ng.cork.throttling'])
+.service('someService', ['corkThrottling', function (corkThrottling) {
+    var expensiveFn = function () { /* expensive code */ }
+    var throttled = corkThrottling.someMethod(expensiveFn);
+}])
+</pre>
+

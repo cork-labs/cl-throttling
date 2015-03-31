@@ -1,5 +1,5 @@
 {
-  "name": "ng.cl.throttling",
+  "name": "ng.cork.throttling",
   "version": "0.0.6",
   "description": "AngularJS service providing helpers to debounce and throttle function calls.",
   "author": {
@@ -17,11 +17,11 @@
     "debounce",
     "throttle"
   ],
-  "homepage": "http://github.com/cork-labs/ng.cl.throttling",
-  "bugs": "https://github.com/cork-labs/ng.cl.throttling/issues",
+  "homepage": "http://github.com/cork-labs/ng.cork.throttling",
+  "bugs": "https://github.com/cork-labs/ng.cork.throttling/issues",
   "repository": {
     "type": "git",
-    "url": "git://github.com/cork-labs/ng.cl.throttling.git"
+    "url": "git://github.com/cork-labs/ng.cork.throttling.git"
   },
   "readmeFilename": "README.md",
   "dependencies": {

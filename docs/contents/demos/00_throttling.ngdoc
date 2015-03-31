@@ -9,9 +9,9 @@ Execute the throttled function as necessary, but never under M miliseconds after
 <doc:example module="exampleApp" height="380">
     <doc:source>
         <script>
-            angular.module('exampleApp', ['ng.cl.throttling'])
-            .controller('exampleCtrl', ['$scope', 'clThrottling', function ($scope, clThrottling) {
-                var throttledHandler = clThrottling.throttle(function (val) {
+            angular.module('exampleApp', ['ng.cork.throttling'])
+            .controller('exampleCtrl', ['$scope', 'corkThrottling', function ($scope, corkThrottling) {
+                var throttledHandler = corkThrottling.throttle(function (val) {
                     $scope.throttled = $scope.userInput;
                 }, 2000);
                 $scope.$watch('userInput', function (newVal) {

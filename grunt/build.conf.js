@@ -125,9 +125,9 @@ module.exports = function (grunt, data) {
                 ' * License: <%= vars.license %>\n' +
                 ' */\n',
 
-            // used in the name of the template module (results in "ng.cl.throttling.templates")
+            // used in the name of the template module (results in "ng.cork.throttling.templates")
             // as well as filenames of dist files
-            ngNamespace: 'ng.cl.throttling',
+            ngNamespace: 'ng.cork.throttling',
 
             // -- docs related
 
@@ -151,8 +151,7 @@ module.exports = function (grunt, data) {
                 // scripts stylesheets and examples
                 examplesScripts: [
                     '<%= paths.vendor %>/angular/angular.js',
-                    'src/lib/ng.cl.throttling/ng.cl.throttling.js',
-                    // 'src/lib/ng.cl.throttling/ng.cl.throttling.templates.js',
+                    'src/lib/ng.cork.throttling/throttling.js'
                 ],
                 examplesStyles: [
                     '//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css',

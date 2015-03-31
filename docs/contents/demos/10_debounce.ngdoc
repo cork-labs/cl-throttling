@@ -9,9 +9,9 @@ Execute the debounced function only after M miliseconds of no calls.
 <doc:example module="exampleApp" height="380">
     <doc:source>
         <script>
-            angular.module('exampleApp', ['ng.cl.throttling'])
-            .controller('exampleCtrl', ['$scope', 'clThrottling', function ($scope, clThrottling) {
-                var debouncedHandler = clThrottling.debounce(function (val) {
+            angular.module('exampleApp', ['ng.cork.throttling'])
+            .controller('exampleCtrl', ['$scope', 'corkThrottling', function ($scope, corkThrottling) {
+                var debouncedHandler = corkThrottling.debounce(function (val) {
                     $scope.debounced = $scope.userInput;
                 }, 2000);
                 $scope.$watch('userInput', function (newVal) {
