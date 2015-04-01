@@ -7,6 +7,7 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/cork-labs/ng.cork.throttling",
+  "main": "dist/ng.cork.throttling.min.js",
   "ignore": [
     "bin",
     "docs",
