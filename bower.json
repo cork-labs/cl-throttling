@@ -1,6 +1,6 @@
 {
   "name": "ng.cork.throttling",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "AngularJS service providing helpers to debounce and throttle function calls.",
   "authors": [
     "Cork Labs <contact@cork-labs.org> (http://cork-labs.org)"
