@@ -170,13 +170,13 @@ module.exports = function (grunt, data) {
                     guide: {
                         src: ['docs/contents/guide/*.ngdoc'],
                         title: 'Guide',
-                        icon: 'book',
+                        icon: 'lightbulb',
                         priority: 1
                     },
                     demos: {
                         src: ['docs/contents/demos/*.ngdoc'],
                         title: 'Demos',
-                        icon: 'eye-open',
+                        icon: 'play-circle',
                         priority: 2
                     },
                     api: {
