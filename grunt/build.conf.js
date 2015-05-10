@@ -135,7 +135,7 @@ module.exports = function (grunt, data) {
 
                 // comment out if you don't wan't a logo and a link
                 image: 'docs/assets/cork-labs-320x320.png',
-                imageLink: '#/guide',
+                imageLink: 'http://cork-labs.org/projects/ng.cork.throttling',
 
                 // scripts and stylesheets to load in the documentation app
                 // the below docs.css overrides the color scheme and navbar with some Cork Labs branding
