@@ -1,5 +1,5 @@
 /**
- * ng.cork.throttling - v0.0.8 - 2015-04-17
+ * ng.cork.throttling - v0.0.9 - 2015-05-11
  * http://github.com/cork-labs/ng.cork.throttling
  *
  * Copyright (c) 2015 Cork Labs <http://cork-labs.org/>
